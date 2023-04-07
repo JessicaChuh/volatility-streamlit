@@ -19,7 +19,7 @@ cols = st.empty()
 placeholder = st.empty()
 
 def update_chart(data):
-    for i in range(450):
+    for i in range(380):
         with cols.container():
             if i % 10 == 0:
                 col1, col2, col3, col4, col5 = st.columns(5,gap='large')
