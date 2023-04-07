@@ -3,6 +3,7 @@ from modeling.prediction import prediction_display
 import time
 import plotly.express as px
 
+
 st.set_page_config(
     page_title="Real-Time Volatility Dashboard",
     page_icon="✅",
@@ -12,13 +13,11 @@ st.set_page_config(
 st.markdown("<h1 style='text-align: center; color: Black;'> Real-Time Volatility Dashboard </h1>", unsafe_allow_html=True)
 
 
-data = prediction_display()
-
 cols = st.empty()
 placeholder = st.empty()
 
-def update_chart():
-    for i in range(480):
+def update_chart(data):
+    for i in range(479):
         with cols.container():
             if i % 10 == 0:
                 col1, col2, col3, col4, col5 = st.columns(5,gap='large')
@@ -63,4 +62,5 @@ def update_chart():
             time.sleep(1)
 
 while True:
-    update_chart()
+    data = prediction_display()
+    update_chart(data)
