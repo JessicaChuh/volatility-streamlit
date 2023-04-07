@@ -62,5 +62,5 @@ def update_chart():
 
             time.sleep(1)
 
-
-update_chart()
+while True:
+    update_chart()
