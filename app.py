@@ -3,6 +3,8 @@ from modeling.prediction import prediction_display
 import time
 import plotly.express as px
 
+from scraping.scraper import scrape
+
 
 st.set_page_config(
     page_title="Real-Time Volatility Dashboard",
@@ -58,6 +60,10 @@ def update_chart(data):
                 fig = px.line(to_plot, x="time(GMT)",y="prediction",width=1800, height=1000)
 
                 placeholder.write(fig)
+
+
+            if i % 4 == 0:
+                scrape()
 
             time.sleep(1)
 
