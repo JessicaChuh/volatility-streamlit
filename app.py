@@ -62,11 +62,12 @@ def update_chart(data):
                 placeholder.write(fig)
 
 
-            if i % 4 == 0:
-                scrape()
+            # if i % 4 == 0:
+            #     scrape()
 
             time.sleep(1)
 
 while True:
+    scrape()
     data = prediction_display()
     update_chart(data)
